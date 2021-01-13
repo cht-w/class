@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6中类和对象</title>
+</head>
+<body>
+<script>
+    class Person {
+        constructor(name , age) {
+            this.name = name;
+            this.age = age;
+            this.say = function(){
+                console.log(this.name, this.age);
+            }
+        }
+        static color = 'red';
+        static like = 'eat';
+        static walk = function () {
+            console.log('walk');
+        }
+    }
+    let p = new Person('cht' , 10);
+    console.log(p);
+
+
+</script>
+</body>
+</html>
