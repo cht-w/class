@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6实现继承</title>
+</head>
+<body>
+<script>
+    class Person {
+        constructor(myName , myAge) {
+            this.name = myName ;
+            this.age = myAge;
+        }
+        say() {
+            console.log(this.name, this.age);
+        }
+    }
+    // 1. 使用extends实现继承
+    class Son extends Person {
+        constructor(myName  , myAge , myNumber) {
+            // 2. 借用父类构造函数， super 相当于 call/ apply
+            super(myName , myAge);
+            this.number = myNumber;
+        }
+        play() {
+            console.log(this.number);
+        }
+    }
+
+    // 创建一个子类得实例对象
+    let son1 = new Son('cht' , 10 , 12345);
+    son1.say();  // 调用 son1 --->  Son ---> Person
+    son1.play();
+
+
+</script>
+</body>
+</html>
